@@ -1,0 +1,32 @@
+{
+  "nav": {
+    "home": "Home",
+    "menu": "Menu",
+    "about": "Our Story",
+    "gallery": "Gallery",
+    "reservation": "Reservation",
+    "contact": "Contact",
+    "findUs": "Find Us"
+  },
+  "hero": {
+    "title": "Authentic Italian Soul",
+    "subtitle": "A cinematic journey through the heart of Austria, served in every dish.",
+    "cta_reserve": "Reserve Table",
+    "cta_menu": "Explore Menu"
+  },
+  "about": {
+    "title": "A Legacy of Passion",
+    "story": "Founded in 1982, da Giovanni has been bringing the authentic taste of Italy to the heart of Europe. Our journey started in a small kitchen with big dreams and a handful of family recipes passed down through generations."
+  },
+  "menu": {
+    "title": "Signature Flavors",
+    "pizza": "Wood-Fired Pizza",
+    "pasta": "Handmade Pasta",
+    "seafood": "Fresh Seafood",
+    "vegan": "Vegan Selections"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "newsletter": "Join our newsletter for seasonal specials."
+  }
+}

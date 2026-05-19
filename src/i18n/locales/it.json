@@ -1,0 +1,32 @@
+{
+  "nav": {
+    "home": "Home",
+    "menu": "Menu",
+    "about": "La Nostra Storia",
+    "gallery": "Galleria",
+    "reservation": "Prenotazione",
+    "contact": "Contatti",
+    "findUs": "Trovaci"
+  },
+  "hero": {
+    "title": "Anima Autentica Italiana",
+    "subtitle": "Un viaggio cinematografico nel cuore dell'Austria, servito in ogni piatto.",
+    "cta_reserve": "Prenota un Tavolo",
+    "cta_menu": "Esplora il Menu"
+  },
+  "about": {
+    "title": "Un'eredità di Passione",
+    "story": "Fondato nel 1982, da Giovanni porta il gusto autentico dell'Italia nel cuore dell'Europa. Il nostro viaggio è iniziato in una piccola cucina con grandi sogni e una manciata di ricette di famiglia tramandate da generazioni."
+  },
+  "menu": {
+    "title": "Sapori d'Autore",
+    "pizza": "Pizza nel Forno a Legna",
+    "pasta": "Pasta Fatta a Mano",
+    "seafood": "Frutti di Mare Freschi",
+    "vegan": "Selezione Vegana"
+  },
+  "footer": {
+    "rights": "Tutti i diritti riservati.",
+    "newsletter": "Iscriviti alla nostra newsletter per le specialità stagionali."
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "menu": "Speisekarte",
+    "about": "Unsere Geschichte",
+    "gallery": "Galerie",
+    "reservation": "Reservierung",
+    "contact": "Kontakt",
+    "findUs": "Finde uns"
+  },
+  "hero": {
+    "title": "Authentische italienische Seele",
+    "subtitle": "Eine cineastische Reise durch das Herz Österreichs, serviert in jedem Gericht.",
+    "cta_reserve": "Tisch reservieren",
+    "cta_menu": "Menü erkunden"
+  },
+  "about": {
+    "title": "Ein Erbe der Leidenschaft",
+    "story": "Gegründet 1982 bringt da Giovanni den authentischen Geschmack Italiens in das Herz Europas. Unsere Reise begann in einer kleinen Küche mit großen Träumen und einer Handvoll Familienrezepte, die über Generationen weitergegeben wurden."
+  },
+  "menu": {
+    "title": "Signatur-Aromen",
+    "pizza": "Holzofen-Pizza",
+    "pasta": "Handgemachte Pasta",
+    "seafood": "Frische Meeresfrüchte",
+    "vegan": "Vegane Auswahl"
+  },
+  "footer": {
+    "rights": "Alle Rechte vorbehalten.",
+    "newsletter": "Abonnieren Sie unseren Newsletter für saisonale Spezialitäten."
+  }
+}
