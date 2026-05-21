@@ -63,48 +63,61 @@ export function Menu() {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-x-20 gap-y-16">
+        <div className="grid md:grid-cols-2 gap-x-12 lg:gap-x-20 gap-y-12">
           <AnimatePresence mode="wait">
             {menuItems[activeCategory as keyof typeof menuItems].map((item, idx) => (
               <motion.div
                 key={item.name}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="group cursor-pointer relative"
+                exit={{ opacity: 0, y: -15 }}
+                transition={{ duration: 0.4, delay: idx * 0.08 }}
+                className="group cursor-pointer relative flex flex-col justify-between"
               >
-                <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-2xl md:text-3xl font-serif text-cream group-hover:text-primary transition-colors">
-                    {item.name}
-                  </h3>
-                  <span className="text-xl font-light text-cream/90">{item.price}</span>
+                <div>
+                  <div className="flex items-baseline justify-between gap-4 mb-2">
+                    <h3 className="text-xl md:text-2xl font-serif text-cream group-hover:text-primary transition-colors pr-2 shrink-0">
+                      {item.name}
+                    </h3>
+                    {/* Premium dotted leader line */}
+                    <div className="flex-1 border-b border-dotted border-white/10 group-hover:border-primary/30 transition-colors mx-2 relative top-[-4px]" />
+                    <span className="text-lg md:text-xl font-light text-cream/90 font-mono tracking-tight shrink-0">{item.price}</span>
+                  </div>
+                  <div className="flex items-center justify-between gap-4">
+                    <p className="text-cream/50 font-light text-sm italic leading-relaxed max-w-[85%]">{item.desc}</p>
+                    <div className="flex gap-1.5 shrink-0 select-none">
+                      {item.tags.map(tag => (
+                        <span key={tag} className="text-[8px] tracking-wider uppercase bg-white/[0.02] border border-white/10 text-cream/40 px-2.5 py-1 rounded-md group-hover:border-primary/30 group-hover:text-primary transition-colors">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  {item.tags.includes('Signature') && (
+                    <span className="absolute -top-7 left-0 bg-primary/10 text-primary text-[8px] uppercase tracking-widest px-3 py-1 rounded-full border border-primary/20">
+                      Chef's Recommendation
+                    </span>
+                  )}
                 </div>
-                <div className="flex items-center justify-between">
-                  <p className="text-cream/40 font-light text-base italic leading-relaxed">{item.desc}</p>
-                </div>
-                {item.tags.includes('Signature') && (
-                  <span className="absolute -top-6 left-0 bg-primary/10 text-primary text-[9px] uppercase tracking-widest px-3 py-1 rounded-full border border-primary/20">
-                    Chef's Recommendation
-                  </span>
-                )}
-                <div className="h-px w-full bg-white/5 group-hover:bg-primary/30 transition-colors mt-6" />
+                <div className="h-px w-full bg-white/5 group-hover:bg-primary/20 transition-all duration-500 mt-5" />
               </motion.div>
             ))}
           </AnimatePresence>
         </div>
 
-        <div className="mt-24 pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-8">
-          <p className="text-white/30 text-xs italic text-center md:text-left max-w-sm">
-            All prices include VAT. Please inform our staff about any allergies or dietary requirements.
+        <div className="mt-20 pt-10 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-8">
+          <p className="text-white/30 text-[11px] leading-relaxed italic text-center md:text-left max-w-md">
+            All ingredients are premium grade & locally curated. All prices include VAT. Please inform our hosts of any allergen, dietary restriction, or cross-contact concern.
           </p>
-          <motion.button
+          <motion.a
+            href="#"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="text-[10px] uppercase tracking-[0.3em] font-bold text-white border-b border-white/30 pb-2 hover:border-white transition-all"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-white/[0.02] hover:bg-white/[0.05] border border-white/10 hover:border-white/20 transition-all rounded-full text-cream text-[10px] font-bold tracking-[0.2em] uppercase cursor-pointer"
           >
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             Download Full Dinner Menu (PDF)
-          </motion.button>
+          </motion.a>
         </div>
       </div>
     </section>

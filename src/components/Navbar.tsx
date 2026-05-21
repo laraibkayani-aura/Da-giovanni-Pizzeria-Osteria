@@ -56,39 +56,42 @@ export function Navbar() {
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b',
         isScrolled 
-          ? 'bg-black/40 backdrop-blur-md border-white/10 py-4' 
-          : 'bg-transparent border-transparent py-8'
+          ? 'bg-[#0a0502]/85 backdrop-blur-2xl border-white/5 py-3 shadow-[0_10px_30px_rgba(0,0,0,0.8)]' 
+          : 'bg-transparent border-transparent py-7'
       )}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-4 group">
-          <span className="text-2xl md:text-3xl font-serif tracking-tighter italic text-cream transition-colors group-hover:text-primary">
-            da Giovanni
+        <a href="#" className="flex items-center gap-4 group select-none">
+          <span className="text-xl md:text-2xl font-serif tracking-tight text-cream transition-all group-hover:text-primary">
+            da Giovanni <span className="font-serif italic text-primary group-hover:text-cream transition-all">Vienna</span>
           </span>
         </a>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center space-x-12">
-          {navItems.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              className="text-[11px] uppercase tracking-widest text-cream/70 hover:text-cream transition-colors"
-            >
-              {item.name}
-            </a>
-          ))}
+        <div className="hidden lg:flex items-center space-x-10">
+          <div className="flex items-center space-x-8">
+            {navItems.map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                className="text-[10px] uppercase tracking-[0.2em] font-semibold text-cream/70 hover:text-cream transition-all duration-300 relative py-2 group/link"
+              >
+                {item.name}
+                <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-primary transition-all duration-300 group-hover/link:w-full" />
+              </a>
+            ))}
+          </div>
           
-          <div className="flex items-center gap-2 bg-white/5 rounded-full p-1 border border-white/10">
+          <div className="flex items-center gap-1.5 bg-white/[0.03] rounded-full p-1 border border-white/5">
             {languages.map((lang) => (
               <button
                 key={lang.code}
                 onClick={() => changeLanguage(lang.code)}
                 className={cn(
-                  'px-3 py-1 text-[10px] font-bold tracking-tighter transition-all rounded-full',
+                  'px-3 py-1 text-[9px] font-bold tracking-[0.1em] transition-all rounded-full cursor-pointer',
                   i18n.language.startsWith(lang.code) 
-                    ? 'bg-primary text-white shadow-lg' 
-                    : 'text-cream/40 hover:text-cream/70'
+                    ? 'bg-primary text-white shadow-md' 
+                    : 'text-cream/40 hover:text-cream/85'
                 )}
               >
                 {lang.name}
@@ -96,52 +99,61 @@ export function Navbar() {
             ))}
           </div>
           
-          <div className="flex items-center gap-4">
-            <div className="flex items-center gap-2 hidden xl:flex">
+          <div className="flex items-center gap-3">
+            <div className="flex items-center gap-1 hidden xl:flex">
               <a 
                 href="https://www.tripadvisor.com/Restaurant_Review-g190454-d1903227-Reviews-Pizzeria_Osteria_Da_Giovanni-Vienna.html"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 text-cream/50 hover:text-primary transition-all hover:scale-110 group"
+                title="TripAdvisor"
+                className="p-2 text-cream/40 hover:text-primary transition-all hover:scale-110 group cursor-pointer"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:drop-shadow-[0_0_8px_rgba(192,94,61,0.5)]"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-9a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zm11 0a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM12 14c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:drop-shadow-[0_0_8px_rgba(192,94,61,0.5)]"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-9a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zm11 0a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM12 14c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
               </a>
               <a 
                 href="https://www.instagram.com/da_giovanni1070"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 text-cream/50 hover:text-primary transition-all hover:scale-110 group"
+                title="Instagram"
+                className="p-2 text-cream/40 hover:text-primary transition-all hover:scale-110 group cursor-pointer"
               >
-                <Instagram size={18} className="group-hover:drop-shadow-[0_0_8px_rgba(192,94,61,0.5)]" />
+                <Instagram size={16} className="group-hover:drop-shadow-[0_0_8px_rgba(192,94,61,0.5)]" />
               </a>
               <a 
                 href="https://www.facebook.com/people/Pizzeria-Osteria-da-Giovanni/100054216771476/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 text-cream/50 hover:text-primary transition-all hover:scale-110 group"
+                title="Facebook"
+                className="p-2 text-cream/40 hover:text-primary transition-all hover:scale-110 group cursor-pointer"
               >
-                <Facebook size={18} className="group-hover:drop-shadow-[0_0_8px_rgba(192,94,61,0.5)]" />
+                <Facebook size={16} className="group-hover:drop-shadow-[0_0_8px_rgba(192,94,61,0.5)]" />
               </a>
             </div>
+            
             <a 
               href="#interactive-map"
-              className="flex items-center gap-2 px-6 py-2 bg-white/5 border border-white/10 rounded-full text-[10px] uppercase tracking-widest hover:bg-white/10 transition-all group"
+              className="flex items-center gap-2 px-4.5 py-2.5 bg-white/[0.02] border border-white/10 rounded-full text-[9px] uppercase tracking-[0.16em] font-semibold hover:bg-white/[0.08] hover:border-white/20 transition-all group/find cursor-pointer"
             >
-              <MapPin size={12} className="text-primary transition-transform group-hover:scale-125" />
+              <MapPin size={11} className="text-primary transition-transform group-hover/find:scale-120" />
               <span>{t('nav.findUs', 'Find Us')}</span>
             </a>
-            <button className="px-6 py-2 bg-transparent border border-cream/30 rounded-full text-[10px] uppercase tracking-widest hover:bg-cream hover:text-black transition-all">
+            
+            <a 
+              href="#reservation"
+              className="px-5 py-2.5 bg-primary text-white border border-transparent rounded-full text-[9px] uppercase tracking-[0.16em] font-bold hover:brightness-115 transition-all shadow-md hover:shadow-primary/20 cursor-pointer"
+            >
               {t('nav.reservation')}
-            </button>
+            </a>
           </div>
         </div>
 
         {/* Mobile Toggle */}
         <button 
-          className="md:hidden text-white"
+          className="lg:hidden text-white p-2 hover:bg-white/5 rounded-full transition-all cursor-pointer"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle navigation menu"
         >
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
 
@@ -152,7 +164,7 @@ export function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 right-0 bg-black/95 backdrop-blur-xl border-b border-white/10 py-10 md:hidden"
+            className="absolute top-full left-0 right-0 bg-[#0a0502]/98 backdrop-blur-2xl border-b border-white/10 py-10 lg:hidden"
           >
             <div className="flex flex-col items-center space-y-8">
               {navItems.map((item) => (

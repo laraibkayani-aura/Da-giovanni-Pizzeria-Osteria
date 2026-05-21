@@ -88,18 +88,22 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="text-cream text-[10px] uppercase tracking-[0.4em] font-bold mb-10">Newsletter</h4>
-            <div className="relative group">
+            <h4 className="text-cream text-[10px] uppercase tracking-[0.4em] font-bold mb-8">Newsletter</h4>
+            <div className="relative group/input">
               <input 
                 type="email" 
                 placeholder="EMAIL ADDRESS"
-                className="w-full bg-white/[0.03] backdrop-blur-xl border border-white/10 p-6 text-[11px] tracking-widest text-cream focus:outline-none focus:border-primary transition-all uppercase rounded-sm"
+                className="w-full bg-white/[0.01] border border-white/10 p-5 pr-14 text-[10px] tracking-widest text-cream focus:outline-none focus:border-primary focus:bg-white/[0.03] transition-all uppercase rounded-xl"
               />
-              <button className="absolute right-6 top-1/2 -translate-y-1/2 text-cream/50 group-hover:text-primary transition-colors">
-                <ArrowUpRight size={24} />
+              <button 
+                type="button"
+                className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-lg text-cream/40 hover:text-primary transition-all duration-300 hover:scale-110 cursor-pointer"
+                aria-label="Subscribe"
+              >
+                <ArrowUpRight size={20} />
               </button>
             </div>
-            <p className="mt-6 text-cream/20 text-[10px] uppercase tracking-widest italic leading-relaxed">
+            <p className="mt-5 text-cream/30 text-[9px] uppercase tracking-widest italic leading-relaxed">
               {t('footer.newsletter')}
             </p>
           </div>

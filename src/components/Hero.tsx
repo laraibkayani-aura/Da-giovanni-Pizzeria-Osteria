@@ -22,33 +22,37 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
         >
-          <span className="text-primary font-serif italic text-xl md:text-2xl mb-6 block">
-            Authentic Austria Heritage
-          </span>
-          <h1 className="text-6xl md:text-9xl font-serif text-cream mb-8 leading-[0.9] tracking-tight">
-            The Art of <br/>Slow Dining.
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <span className="w-8 h-[1px] bg-primary" />
+            <span className="text-primary text-[10px] md:text-xs uppercase tracking-[0.25em] font-semibold">
+              AUTHENTIC ITALIAN HERITAGE IN VIENNA
+            </span>
+            <span className="w-8 h-[1px] bg-primary" />
+          </div>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-cream mb-8 leading-[1.05] tracking-tight">
+            The Art of <br className="hidden sm:block" />Slow Dining.
           </h1>
-          <p className="text-cream/60 text-lg md:text-xl font-light italic max-w-2xl mx-auto mb-12 leading-relaxed">
+          <p className="text-cream/80 text-base md:text-lg font-light italic max-w-2xl mx-auto mb-12 leading-relaxed">
             "{t('hero.subtitle')}"
           </p>
           
-          <div className="flex flex-col md:flex-row items-center justify-center gap-6">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-5 max-w-md mx-auto sm:max-w-none">
             <motion.a
               href="#reservation"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-primary text-white px-10 py-5 rounded-full font-serif text-lg flex items-center gap-3 transition-all shadow-xl w-full md:w-auto"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              className="bg-primary text-white px-9 py-4.5 rounded-full text-[10px] font-bold tracking-[0.2em] uppercase flex items-center justify-center gap-2.5 transition-all shadow-xl hover:shadow-primary/20 w-full sm:w-auto cursor-pointer"
             >
-              {t('hero.cta_reserve')}
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="hidden md:block">
+              <span>{t('hero.cta_reserve')}</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <path d="M5 12h14M12 5l7 7-7 7"/>
               </svg>
             </motion.a>
             <motion.a
               href="#menu"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-white/5 backdrop-blur-xl border border-white/10 text-cream px-10 py-5 rounded-full font-serif text-lg transition-all hover:bg-white/10 w-full md:w-auto"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              className="bg-white/[0.03] backdrop-blur-md border border-white/15 text-cream hover:text-white hover:border-white/30 px-9 py-4.5 rounded-full text-[10px] font-bold tracking-[0.2em] uppercase transition-all w-full sm:w-auto cursor-pointer"
             >
               {t('hero.cta_menu')}
             </motion.a>

@@ -25,9 +25,9 @@ export function Location() {
                   </div>
                 </div>
                 <div className="flex items-start gap-6 border-t border-white/5 pt-8">
-                  <bottom className="text-primary shrink-0">
+                  <div className="text-primary shrink-0">
                     <Mail size={24} />
-                  </bottom>
+                  </div>
                   <p>dagiovanni@gmx.at</p>
                 </div>
                 
